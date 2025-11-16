@@ -1,6 +1,21 @@
 // components/ProductList.tsx
 // This component should receive a `products` array where each product has an `id` (number) and `title` (string)
-const ProductList = ({ products }) => {
+
+
+type Product = {
+  id: number;
+  title: string;
+};
+
+type PrProps = {
+  products: Product[];
+};
+
+// type PrProps = {
+//   products: { id: number; title: string }[];
+// };
+
+const ProductList = ({ products }: PrProps) => {
   return (
     <ul>
       {products.map(product => (
